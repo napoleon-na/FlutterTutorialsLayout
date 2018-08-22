@@ -158,14 +158,29 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('images/pic1.jpg'),
-            Image.asset('images/pic2.jpg'),
-            Image.asset('images/pic3.jpg'),
+            Expanded(
+              child: Image.asset('images/pic4.jpg'),
+            ),
+            Expanded(
+              // flex: 2,
+              child: Image.asset('images/pic5.jpg'),
+            ),
+            Expanded(
+              child: Image.asset('images/pic6.jpg'),
+            ),
           ],
-        )
+        ),
+        // child: Column(
+        //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //   children: [
+        //     Image.asset('images/pic1.jpg'),
+        //     Image.asset('images/pic2.jpg'),
+        //     Image.asset('images/pic3.jpg'),
+        //   ],
+        // )
         // child: Row(
         //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         //   children: [
