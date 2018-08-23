@@ -153,26 +153,37 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var packedRow = Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.black),
+        Icon(Icons.star, color: Colors.black),
+      ],
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: Center(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Image.asset('images/pic4.jpg'),
-            ),
-            Expanded(
-              // flex: 2,
-              child: Image.asset('images/pic5.jpg'),
-            ),
-            Expanded(
-              child: Image.asset('images/pic6.jpg'),
-            ),
-          ],
-        ),
+        child: packedRow,
+        // child: Row(
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+        //   children: [
+        //     Expanded(
+        //       child: Image.asset('images/pic4.jpg'),
+        //     ),
+        //     Expanded(
+        //       // flex: 2,
+        //       child: Image.asset('images/pic5.jpg'),
+        //     ),
+        //     Expanded(
+        //       child: Image.asset('images/pic6.jpg'),
+        //     ),
+        //   ],
+        // ),
         // child: Column(
         //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         //   children: [
