@@ -37,6 +37,10 @@ flutter:
     - images/pic4.jpg
     - images/pic5.jpg
     - images/pic6.jpg
+    - images/pic7.jpg
+    - images/pic8.jpg
+    - images/pic9.jpg
+    - images/pic10.jpg
     - images/pavlova.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
