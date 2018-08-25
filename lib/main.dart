@@ -150,71 +150,90 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
+List<Container> _buildGridTileList(int count) {
+  return List<Container>.generate(
+    count,
+    (int index) => Container(
+      child: Image.asset('images/pic${index+11}.jpg')
+    )
+  );
+}
+
+Widget buildGrid() {
+  return GridView.extent(
+    maxCrossAxisExtent: 150.0,
+    padding: const EdgeInsets.all(4.0),
+    mainAxisSpacing: 4.0,
+    crossAxisSpacing: 4.0,
+    children: _buildGridTileList(30)
+  );
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    var container = Container(
-      decoration: BoxDecoration(
-        color: Colors.black26,
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 10.0, color: Colors.black38),
-                    borderRadius: 
-                        const BorderRadius.all(const Radius.circular(8.0)),
-                  ),
-                  margin: const EdgeInsets.all(4.0),
-                  child: Image.asset('images/pic7.jpg'),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 10.0, color: Colors.black38),
-                    borderRadius: 
-                        const BorderRadius.all(const Radius.circular(8.0)),
-                  ),
-                  margin: const EdgeInsets.all(4.0),
-                  child: Image.asset('images/pic8.jpg'),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 10.0, color: Colors.black38),
-                    borderRadius: 
-                        const BorderRadius.all(const Radius.circular(8.0)),
-                  ),
-                  margin: const EdgeInsets.all(4.0),
-                  child: Image.asset('images/pic9.jpg'),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 10.0, color: Colors.black38),
-                    borderRadius: 
-                        const BorderRadius.all(const Radius.circular(8.0)),
-                  ),
-                  margin: const EdgeInsets.all(4.0),
-                  child: Image.asset('images/pic10.jpg'),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
+    // var container = Container(
+    //   decoration: BoxDecoration(
+    //     color: Colors.black26,
+    //   ),
+    //   child: Column(
+    //     children: [
+    //       Row(
+    //         children: [
+    //           Expanded(
+    //             child: Container(
+    //               decoration: BoxDecoration(
+    //                 border: Border.all(width: 10.0, color: Colors.black38),
+    //                 borderRadius: 
+    //                     const BorderRadius.all(const Radius.circular(8.0)),
+    //               ),
+    //               margin: const EdgeInsets.all(4.0),
+    //               child: Image.asset('images/pic7.jpg'),
+    //             ),
+    //           ),
+    //           Expanded(
+    //             child: Container(
+    //               decoration: BoxDecoration(
+    //                 border: Border.all(width: 10.0, color: Colors.black38),
+    //                 borderRadius: 
+    //                     const BorderRadius.all(const Radius.circular(8.0)),
+    //               ),
+    //               margin: const EdgeInsets.all(4.0),
+    //               child: Image.asset('images/pic8.jpg'),
+    //             ),
+    //           ),
+    //         ],
+    //       ),
+    //       Row(
+    //         children: [
+    //           Expanded(
+    //             child: Container(
+    //               decoration: BoxDecoration(
+    //                 border: Border.all(width: 10.0, color: Colors.black38),
+    //                 borderRadius: 
+    //                     const BorderRadius.all(const Radius.circular(8.0)),
+    //               ),
+    //               margin: const EdgeInsets.all(4.0),
+    //               child: Image.asset('images/pic9.jpg'),
+    //             ),
+    //           ),
+    //           Expanded(
+    //             child: Container(
+    //               decoration: BoxDecoration(
+    //                 border: Border.all(width: 10.0, color: Colors.black38),
+    //                 borderRadius: 
+    //                     const BorderRadius.all(const Radius.circular(8.0)),
+    //               ),
+    //               margin: const EdgeInsets.all(4.0),
+    //               child: Image.asset('images/pic10.jpg'),
+    //             ),
+    //           ),
+    //         ],
+    //       ),
+    //     ],
+    //   ),
+    // );
 
 //     var titleText = Container(
 //       padding: EdgeInsets.all(20.0),
@@ -342,7 +361,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: container,
+        child: buildGrid(),
+        // child: container,
         // child: Container(
         //   margin: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 30.0),
         //   height: 600.0,
