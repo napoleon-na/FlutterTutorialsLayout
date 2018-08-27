@@ -150,24 +150,46 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-List<Container> _buildGridTileList(int count) {
-  return List<Container>.generate(
-    count,
-    (int index) => Container(
-      child: Image.asset('images/pic${index+11}.jpg')
-    )
-  );
-}
+List<Widget> list = <Widget>[
+  ListTile(
+    title: Text('CineArts at the Empire',
+      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('85 W Portal Ave'),
+    leading: Icon(
+        Icons.theaters,
+        color: Colors.blue[500],
+      ),
+    ),
+  ListTile(
+    title: Text('The Castro Theater',
+      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('429 Castro St'),
+    leading: Icon(
+        Icons.theaters,
+        color: Colors.blue[500],
+      ),
+    ),
+  // leave out the rest of the column
+];
 
-Widget buildGrid() {
-  return GridView.extent(
-    maxCrossAxisExtent: 150.0,
-    padding: const EdgeInsets.all(4.0),
-    mainAxisSpacing: 4.0,
-    crossAxisSpacing: 4.0,
-    children: _buildGridTileList(30)
-  );
-}
+// List<Container> _buildGridTileList(int count) {
+//   return List<Container>.generate(
+//     count,
+//     (int index) => Container(
+//       child: Image.asset('images/pic${index+11}.jpg')
+//     )
+//   );
+// }
+
+// Widget buildGrid() {
+//   return GridView.extent(
+//     maxCrossAxisExtent: 150.0,
+//     padding: const EdgeInsets.all(4.0),
+//     mainAxisSpacing: 4.0,
+//     crossAxisSpacing: 4.0,
+//     children: _buildGridTileList(30)
+//   );
+// }
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -361,7 +383,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: buildGrid(),
+        child: ListView(
+          children: list,
+        ),
+        // child: buildGrid(),
         // child: container,
         // child: Container(
         //   margin: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 30.0),
