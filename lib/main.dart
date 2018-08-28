@@ -150,27 +150,27 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-List<Widget> list = <Widget>[
-  ListTile(
-    title: Text('CineArts at the Empire',
-      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: Text('85 W Portal Ave'),
-    leading: Icon(
-        Icons.theaters,
-        color: Colors.blue[500],
-      ),
-    ),
-  ListTile(
-    title: Text('The Castro Theater',
-      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: Text('429 Castro St'),
-    leading: Icon(
-        Icons.theaters,
-        color: Colors.blue[500],
-      ),
-    ),
-  // leave out the rest of the column
-];
+// List<Widget> list = <Widget>[
+//   ListTile(
+//     title: Text('CineArts at the Empire',
+//       style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+//     subtitle: Text('85 W Portal Ave'),
+//     leading: Icon(
+//         Icons.theaters,
+//         color: Colors.blue[500],
+//       ),
+//     ),
+//   ListTile(
+//     title: Text('The Castro Theater',
+//       style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+//     subtitle: Text('429 Castro St'),
+//     leading: Icon(
+//         Icons.theaters,
+//         color: Colors.blue[500],
+//       ),
+//     ),
+//   // leave out the rest of the column
+// ];
 
 // List<Container> _buildGridTileList(int count) {
 //   return List<Container>.generate(
@@ -194,6 +194,29 @@ List<Widget> list = <Widget>[
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+
+    var stack = Stack(
+      alignment: const Alignment(0.6, 0.6),
+      children: <Widget>[
+        CircleAvatar(
+          backgroundImage: AssetImage('images/pic41.jpg'),
+          radius: 100.0,
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.black45,
+          ),
+          child: Text(
+            'Mia B',
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ],
+    );
 
     // var container = Container(
     //   decoration: BoxDecoration(
@@ -383,9 +406,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: ListView(
-          children: list,
-        ),
+        child: stack,
+        // child: ListView(
+        //   children: list,
+        // ),
         // child: buildGrid(),
         // child: container,
         // child: Container(
