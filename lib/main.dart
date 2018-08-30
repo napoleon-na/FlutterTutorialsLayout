@@ -195,28 +195,63 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    var stack = Stack(
-      alignment: const Alignment(0.6, 0.6),
-      children: <Widget>[
-        CircleAvatar(
-          backgroundImage: AssetImage('images/pic41.jpg'),
-          radius: 100.0,
-        ),
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.black45,
-          ),
-          child: Text(
-            'Mia B',
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+    var card = SizedBox(
+      height: 210.0,
+      child: Card(
+        child: Column(
+          children: [
+            ListTile(
+              title: Text('1625 Main Street',
+                style: TextStyle(fontWeight: FontWeight.w500)),
+              subtitle: Text('My City, CA 99984'),
+              leading: Icon(
+                Icons.restaurant_menu,
+                color: Colors.blue[500],
+              ),
             ),
-          ),
+            Divider(),
+            ListTile(
+              title: Text('(408) 555-1212',
+                style: TextStyle(fontWeight: FontWeight.w500)),
+              leading: Icon(
+                Icons.contact_phone,
+                color: Colors.blue[500],
+              ),
+            ),
+            ListTile(
+              title: Text('costa@example.com'),
+              leading: Icon(
+                Icons.contact_mail,
+                color: Colors.blue[500],
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
+
+    // var stack = Stack(
+    //   alignment: const Alignment(0.6, 0.6),
+    //   children: <Widget>[
+    //     CircleAvatar(
+    //       backgroundImage: AssetImage('images/pic41.jpg'),
+    //       radius: 100.0,
+    //     ),
+    //     Container(
+    //       decoration: BoxDecoration(
+    //         color: Colors.black45,
+    //       ),
+    //       child: Text(
+    //         'Mia B',
+    //         style: TextStyle(
+    //           fontSize: 20.0,
+    //           fontWeight: FontWeight.bold,
+    //           color: Colors.white,
+    //         ),
+    //       ),
+    //     ),
+    //   ],
+    // );
 
     // var container = Container(
     //   decoration: BoxDecoration(
@@ -406,7 +441,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: stack,
+        child: card,
+        // child: stack,
         // child: ListView(
         //   children: list,
         // ),
